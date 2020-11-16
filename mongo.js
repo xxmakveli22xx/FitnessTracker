@@ -8,6 +8,6 @@ const TrackerSchema = new Schema({
 });
 
 
-const Example = mongoose.model("Example", TrackerSchema);
+const Tracker = mongoose.model("fitnessTracker", TrackerSchema);
 
-module.exports = Example;
+module.exports = Tracker;
