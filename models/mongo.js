@@ -30,11 +30,11 @@ const TrackerSchema = new Schema({
 
        reps:{
         type: Number
-    },
+       },
 
-      sets:{
+       sets:{
         type: Number
-    }
+       }
 
    }]
 
@@ -54,8 +54,6 @@ TrackerSchema.virtual("totalDuration").get(function () {
     return total + exercise.duration;
   }, 0);
 });
-
-
 
 
 const Tracker = mongoose.model("fitnessTracker", TrackerSchema);
