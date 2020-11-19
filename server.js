@@ -3,13 +3,16 @@ const logger = require("morgan");
 const mongoose = require("mongoose");
 const PORT = 3000;
 const app = express();
+
 app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
-mongoose.connection(process.env.MONGODB || "mongodb://localhost/fitnessTracker",)
-mongoose.connect("mongodb://localhost/workout", {
+
+mongoose.connect(process.env.MONGODB || "mongodb://localhost/workout", { 
   useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
   useFindAndModify: false
 });
 // routes

@@ -1,4 +1,4 @@
-const router = require("router").Router;
+const router = require("router").Router();
 const Tracker = require("../models/mongo.js");
 
 //router.post
@@ -53,4 +53,4 @@ router.get("/api/workouts/range", function (req, res) {
 //router.delete("/api/workouts")
 
 
-module.exports = router;
+module.exports = Tracker;

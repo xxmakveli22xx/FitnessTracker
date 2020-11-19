@@ -12,4 +12,4 @@ router.get("/stats", (req, res) => {
 });
 
 
-module.exports = Router;
+module.exports = router;
