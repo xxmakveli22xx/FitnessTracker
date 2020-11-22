@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const TrackerSchema = new Schema({
+const trackerSchema = new Schema({
    day: {
        type: Date,
        default:() => new Date()
@@ -48,7 +48,7 @@ const TrackerSchema = new Schema({
   }
 );
 // adds a dynamically-created property to schema
-TrackerSchema.virtual("totalDuration").get(function () {
+trackerSchema.virtual("totalDuration").get(function () {
   // "reduce" array of exercises down to just the sum of their durations
   return this.exercises.reduce((total, exercise) => {
     return total + exercise.duration;
@@ -56,6 +56,6 @@ TrackerSchema.virtual("totalDuration").get(function () {
 });
 
 
-const Tracker = mongoose.model("fitnessTracker", TrackerSchema);
+const Tracker = mongoose.model("Fitness", trackerSchema);
 
 module.exports = Tracker;
